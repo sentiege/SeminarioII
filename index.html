@@ -3,330 +3,491 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía de Estudio — Movimientos Sociales y Políticos Latinoamericanos</title>
+<title>Movimientos Sociales y Políticos Latinoamericanos — Guía de estudio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Literata:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f6f8;--card:#fff;--ink:#20252b;--muted:#66717d;--accent:#1f4e79;--accent2:#dfeaf4;--key:#fff3bf;--danger:#7b263a;--ok:#286c4a}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Arial,sans-serif}
-header{background:linear-gradient(135deg,#173a5a,#2d638f);color:white;padding:42px 20px;text-align:center}
-header h1{margin:0 0 8px;font-size:clamp(28px,5vw,44px)} header p{margin:0;opacity:.9}
-nav{position:sticky;top:0;z-index:10;background:#102d45;padding:10px;display:flex;gap:8px;overflow:auto}
-nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:8px;white-space:nowrap;font-size:14px}
-nav a:hover{background:#285779}
-main{max-width:1100px;margin:auto;padding:24px 16px}
-section{background:var(--card);margin:20px 0;padding:24px;border-radius:14px;box-shadow:0 3px 15px #0000000c}
-h2{color:var(--accent);border-bottom:2px solid var(--accent2);padding-bottom:8px}
-h3{color:#30485c}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-.card{border:1px solid #dbe1e6;border-radius:12px;padding:16px;background:#fafcfd}
-.key{background:var(--key);padding:2px 6px;border-radius:5px;font-weight:bold}
-.memory{border-left:5px solid var(--accent);background:#eef5fa;padding:14px 16px;border-radius:8px;margin:14px 0}
-.mnemonic{font-size:20px;font-weight:bold;color:var(--danger)}
-.timeline{display:grid;gap:10px}.event{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px;border-left:4px solid var(--accent);background:#f8fafc}
-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}th,td{padding:10px;border:1px solid #d7dde2;text-align:left;vertical-align:top}th{background:var(--accent2)}
-button{border:0;background:var(--accent);color:white;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:bold}
-button.secondary{background:#687582}.quiz-q{padding:14px;border:1px solid #ddd;border-radius:10px;margin:12px 0}.answer{display:none;margin-top:8px;padding:10px;background:#eaf6ef;border-left:4px solid var(--ok)}
-.flash{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;background:#fff8dc;border:2px dashed #d5b94b;border-radius:12px;padding:20px;font-size:22px;font-weight:bold}
-small{color:var(--muted)} footer{text-align:center;padding:30px;color:var(--muted)}
-@media(max-width:650px){.event{grid-template-columns:1fr}section{padding:18px}table{font-size:12px}}
+:root{
+  --bg:#f4efe3;
+  --paper:#fffcf5;
+  --ink:#1c1f24;
+  --muted:#666f5c00;
+  --muted2:#5c6270;
+  --line:#e1d7bd;
+  --navy:#102943;
+  --navy2:#1c3f61;
+  --gold:#a97f24;
+  --gold-soft:#f2e3bc;
+  --maroon:#6d3540;
+  --red:#9a2c2c;
+  --green:#2f6f4f;
+  --teal:#2b6a70;
+  --indigo:#3a3f68;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Literata',Georgia,serif;font-size:17px;line-height:1.65}
+h1,h2,h3,.headline{font-family:'Oswald',Arial,sans-serif}
+::selection{background:var(--gold-soft)}
+
+a{color:var(--navy2)}
+
+/* ---------- shell layout ---------- */
+.shell{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:252px minmax(0,1fr)}
+
+/* ---------- top masthead ---------- */
+.masthead{background:var(--navy);color:#f3ede0;padding:38px 28px 30px;position:relative;overflow:hidden}
+.masthead::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(243,237,224,.14)}
+.masthead .kicker{font-family:'Oswald';font-weight:500;letter-spacing:.02em;font-size:13px;color:var(--gold-soft);margin:0 0 10px}
+.masthead h1{margin:0;font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.08;max-width:16ch}
+.masthead p{margin:14px 0 0;color:#cdd6df;max-width:52ch;font-size:15.5px}
+.menu-btn{display:none}
+
+/* ---------- sidebar / index ---------- */
+.sidebar{background:var(--navy2);position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:22px 0 40px;border-right:1px solid rgba(0,0,0,.15)}
+.sidebar .side-title{color:#b9c6d3;font-family:'Oswald';font-size:12px;font-weight:500;letter-spacing:.03em;padding:0 22px;margin:6px 0 14px}
+.sidebar nav{display:flex;flex-direction:column}
+.sidebar a{display:flex;align-items:center;gap:10px;padding:9px 22px;color:#dbe3ea;text-decoration:none;font-size:14.5px;border-left:3px solid transparent}
+.sidebar a .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;background:#8092a3}
+.sidebar a:hover{background:rgba(255,255,255,.06)}
+.sidebar a.active{background:rgba(255,255,255,.09);border-left-color:var(--gold);color:#fff;font-weight:600}
+
+/* ---------- main content ---------- */
+main{padding:34px 32px 60px;min-width:0}
+section{max-width:760px;margin:0 auto 8px}
+.chapter{padding-top:6px;margin-bottom:46px;scroll-margin-top:18px}
+.chapter-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
+.seal{flex:0 0 auto;width:52px;height:52px;border-radius:50%;border:2px solid var(--accent,var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Oswald';font-weight:600;font-size:19px;color:var(--accent,var(--navy))}
+.chapter-head h2{margin:2px 0 0;font-size:25px;font-weight:600;color:var(--ink)}
+.chapter-head .sub{display:block;font-family:'Literata';font-style:italic;font-weight:400;font-size:14.5px;color:#5c6270;margin-top:3px}
+
+h3{font-size:16.5px;color:var(--accent,var(--navy));margin:26px 0 10px;font-weight:600;letter-spacing:.01em}
+
+p{margin:0 0 14px}
+
+.key{background:var(--gold-soft);padding:1px 6px;border-radius:3px;font-weight:600;box-decoration-break:clone}
+
+.memory{border-left:4px solid var(--accent,var(--navy));background:var(--paper);padding:14px 18px;border-radius:2px;margin:16px 0;box-shadow:0 1px 0 var(--line)}
+.memory b{color:var(--accent,var(--navy))}
+.mnemonic{display:block;font-family:'Oswald';font-weight:600;font-size:15px;color:var(--accent,var(--navy));letter-spacing:.01em;margin-bottom:4px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}
+.card{border:1px solid var(--line);border-left:3px solid var(--accent,var(--navy));border-radius:2px;padding:13px 15px;background:var(--paper)}
+.card b{display:block;font-family:'Oswald';font-weight:600;font-size:14px;margin-bottom:4px;color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px;background:var(--paper)}
+th,td{padding:9px 11px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--gold-soft);font-family:'Oswald';font-weight:500;font-size:13px}
+tr:nth-child(even) td{background:#faf6ea}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.table-wrap table{margin:0;min-width:520px}
+
+.timeline{display:grid;gap:2px;margin:18px 0}
+.event{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 14px;border-left:4px solid var(--accent,var(--navy));background:var(--paper);border-bottom:1px solid var(--line)}
+.event b{font-family:'Oswald';font-weight:600;color:var(--accent,var(--navy))}
+
+.mapa .card{border-left-width:4px}
+.mapa .num{display:inline-block;font-family:'Oswald';font-weight:600;color:var(--accent,var(--navy));margin-right:4px}
+
+small.foot{color:#5c6270}
+
+/* quiz */
+.quiz-q{padding:15px 16px;border:1px solid var(--line);border-radius:2px;margin:12px 0;background:var(--paper)}
+.quiz-q p.q{margin:0 0 10px;font-weight:600}
+button{border:0;background:var(--navy);color:#fff;padding:9px 16px;border-radius:3px;cursor:pointer;font-family:'Oswald';font-weight:500;font-size:13.5px;letter-spacing:.01em}
+button:hover{background:var(--navy2)}
+button.secondary{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+button.secondary:hover{background:var(--gold-soft)}
+.answer{display:none;margin-top:10px;padding:11px 13px;background:#eef4ef;border-left:4px solid var(--green);font-size:15px}
+.quiz-progress{font-size:13px;color:#5c6270;margin:10px 0 4px;font-family:'Oswald'}
+
+/* flashcards */
+.flash-wrap{background:var(--navy);border-radius:6px;padding:30px 26px;text-align:center;color:#fff;margin:16px 0}
+.flash-count{font-family:'Oswald';font-size:12.5px;color:var(--gold-soft);letter-spacing:.03em;margin-bottom:14px}
+.flash{min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.flash .q{font-family:'Oswald';font-size:15px;color:#cdd6df}
+.flash .a{font-size:19px;font-weight:600}
+.flash-controls{display:flex;justify-content:center;gap:10px;margin-top:20px;flex-wrap:wrap}
+.flash-controls button.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.flash-controls button.secondary:hover{background:rgba(255,255,255,.1)}
+
+footer{max-width:760px;margin:20px auto 60px;padding:0 0 0;color:#5c6270;font-size:13.5px;border-top:1px solid var(--line);padding-top:16px}
+
+.top-link{position:fixed;right:22px;bottom:22px;background:var(--navy);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}
+.top-link.show{opacity:1;pointer-events:auto}
+
+/* accent colors per chapter */
+#ms{--accent:var(--navy)}
+#objetivos{--accent:var(--gold)}
+#cuestion{--accent:var(--maroon)}
+#bienestar{--accent:var(--green)}
+#nuevas{--accent:var(--teal)}
+#revoluciones{--accent:var(--red)}
+#cordoba{--accent:var(--indigo)}
+
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{position:static;height:auto;display:none;border-right:0}
+  .sidebar.open{display:block}
+  .menu-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:20px;font-family:'Oswald';font-size:13px;margin-top:18px;cursor:pointer}
+  main{padding:26px 18px 48px}
+  .event{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .chapter-head{gap:12px}
+  .seal{width:42px;height:42px;font-size:16px}
+  .chapter-head h2{font-size:21px}
+}
 </style>
 </head>
 <body>
-<header>
-<h1>Movimientos Sociales y Políticos Latinoamericanos</h1>
-<p>Guía interactiva de estudio • conceptos, memoria, cronología y autoevaluación</p>
-</header>
 
-<nav>
-<a href="#mapa">Mapa mental</a><a href="#ms">Movimientos sociales</a><a href="#objetivos">Objetivos</a><a href="#cuestion">Cuestión Social</a><a href="#bienestar">Estado de Bienestar</a><a href="#nuevas">Nuevas reivindicaciones</a><a href="#revoluciones">Revoluciones</a><a href="#cordoba">Córdoba</a>
-<a href="#bienestar">Estado de bienestar</a><a href="#revoluciones">Revoluciones</a><a href="#comparacion">Comparación</a><a href="#quiz">Quiz</a>
-</nav>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-title">Índice</div>
+    <nav id="sidenav">
+      <a href="#mapa" data-dot="#122844"><span class="dot" style="background:#122844"></span>Mapa mental</a>
+      <a href="#ms" data-dot="var(--navy)"><span class="dot" style="background:#102943"></span>1 · Movimientos sociales</a>
+      <a href="#objetivos"><span class="dot" style="background:#a97f24"></span>2 · Objetivos</a>
+      <a href="#cuestion"><span class="dot" style="background:#6d3540"></span>3 · Cuestión Social</a>
+      <a href="#bienestar"><span class="dot" style="background:#2f6f4f"></span>4 · Estado de Bienestar</a>
+      <a href="#nuevas"><span class="dot" style="background:#2b6a70"></span>5 · Nuevas reivindicaciones</a>
+      <a href="#revoluciones"><span class="dot" style="background:#9a2c2c"></span>6 · Revoluciones</a>
+      <a href="#cordoba"><span class="dot" style="background:#3a3f68"></span>7 · Reforma de Córdoba</a>
+      <a href="#comparacion"><span class="dot" style="background:#a97f24"></span>Cuadro comparativo</a>
+      <a href="#conexiones"><span class="dot" style="background:#102943"></span>Conexiones clave</a>
+      <a href="#quiz"><span class="dot" style="background:#2f6f4f"></span>Autoevaluación</a>
+      <a href="#flashcards"><span class="dot" style="background:#9a2c2c"></span>Tarjetas de memoria</a>
+      <a href="#metodo"><span class="dot" style="background:#3a3f68"></span>Método de estudio</a>
+    </nav>
+  </aside>
 
-<main>
-<section id="mapa">
-<h2>🧠 Mapa mental rápido</h2>
-<div class="grid">
-<div class="card"><b>1. Movimientos sociales</b><br>Participación ciudadana + organización colectiva + identidad + solidaridad + cambio social.</div>
-<div class="card"><b>2. Objetivos</b><br>Derechos + igualdad + tierra/vivienda + políticas públicas + transformación social.</div>
-<div class="card"><b>3. Cuestión Social</b><br>Revolución Industrial → urbanización → desigualdad → conflicto → respuestas.</div>
-<div class="card"><b>4. Estado de Bienestar</b><br>Estado → impuestos → redistribución → derechos sociales → servicios.</div>
-<div class="card"><b>5. Nuevas reivindicaciones</b><br>Identidad + ambiente + género + derechos civiles + territorio + nuevas formas de participación.</div>
-<div class="card"><b>6. Revoluciones</b><br><span class="key">México 1910</span> → <span class="key">Bolivia 1952</span> → <span class="key">Cuba 1959</span> → <span class="key">Nicaragua 1979</span>.</div>
-<div class="card"><b>7. Reforma de Córdoba</b><br>Universidad + autonomía + cogobierno + reforma universitaria de 1918.</div>
+  <div>
+    <header class="masthead">
+      <p class="kicker">Guía interactiva de estudio</p>
+      <h1>Movimientos Sociales y Políticos Latinoamericanos</h1>
+      <p>Conceptos, cronología de las cuatro grandes revoluciones, cuadros comparativos y autoevaluación — organizados en siete capítulos para repasar antes del parcial.</p>
+      <button class="menu-btn" id="menuBtn">☰ Índice</button>
+    </header>
+
+    <main>
+
+    <section id="mapa" class="chapter mapa">
+      <div class="chapter-head"><div class="seal" style="--accent:#102943">◆</div><div><h2>Mapa mental rápido</h2><span class="sub">Los siete capítulos, en una mirada</span></div></div>
+      <div class="grid">
+        <div class="card" style="--accent:#102943"><b><span class="num">1</span>Movimientos sociales</b>Participación ciudadana + organización colectiva + identidad + solidaridad + cambio social.</div>
+        <div class="card" style="--accent:#a97f24"><b><span class="num">2</span>Objetivos</b>Derechos + igualdad + tierra/vivienda + políticas públicas + transformación social.</div>
+        <div class="card" style="--accent:#6d3540"><b><span class="num">3</span>Cuestión Social</b>Revolución Industrial → urbanización → desigualdad → conflicto → respuestas.</div>
+        <div class="card" style="--accent:#2f6f4f"><b><span class="num">4</span>Estado de Bienestar</b>Estado → impuestos → redistribución → derechos sociales → servicios.</div>
+        <div class="card" style="--accent:#2b6a70"><b><span class="num">5</span>Nuevas reivindicaciones</b>Identidad + ambiente + género + derechos civiles + territorio + nuevas formas de participación.</div>
+        <div class="card" style="--accent:#9a2c2c"><b><span class="num">6</span>Revoluciones</b><span class="key">México 1910</span> → <span class="key">Bolivia 1952</span> → <span class="key">Cuba 1959</span> → <span class="key">Nicaragua 1979</span></div>
+        <div class="card" style="--accent:#3a3f68"><b><span class="num">7</span>Reforma de Córdoba</b>Universidad + autonomía + cogobierno + reforma universitaria de 1918.</div>
+      </div>
+      <div class="memory" style="--accent:#102943"><b>Regla de oro:</b> cuando estudies un movimiento o revolución, preguntá siempre: <b>¿contexto → causas → actores → acción → resultado → legado?</b></div>
+    </section>
+
+    <section id="ms" class="chapter">
+      <div class="chapter-head"><div class="seal">01</div><div><h2>Movimientos sociales</h2><span class="sub">Qué son, cómo se reconocen, ejemplos regionales</span></div></div>
+
+      <h3>¿Qué son?</h3>
+      <p>Son <span class="key">espacios de participación ciudadana</span> donde la sociedad se organiza y actúa colectivamente para alcanzar objetivos comunes. Formalmente, son grupos de base organizados alrededor de una causa que, de manera <span class="key">coordinada, planificada y sostenida en el tiempo</span>, buscan generar cambio social.</p>
+      <div class="memory"><b>⚠️ Diferencia clave:</b> no son simples estallidos espontáneos. Tienen organización, estrategia, identidad, solidaridad y cierta permanencia.</div>
+
+      <h3>Elementos que tenés que recordar</h3>
+      <div class="grid">
+        <div class="card"><b>1. Origen</b>Desigualdades, injusticias y problemas no resueltos.</div>
+        <div class="card"><b>2. Identidad</b>Objetivos, ideas, creencias e intereses comunes.</div>
+        <div class="card"><b>3. Solidaridad</b>Apoyo mutuo y colaboración.</div>
+        <div class="card"><b>4. Acción colectiva</b>Manifestaciones, protestas, boicots, campañas.</div>
+        <div class="card"><b>5. Estructura</b>Cierta estabilidad y estructuras frecuentemente horizontales.</div>
+        <div class="card"><b>6. Recursos</b>Predominan recursos simbólicos: liderazgo, compromiso, narrativas y opinión pública.</div>
+        <div class="card"><b>7. Poder</b>Relación generalmente conflictiva con el poder establecido.</div>
+        <div class="card"><b>8. Ámbito</b>Actúan fuera del ámbito institucional, diferenciándose de partidos, sindicatos y grupos de presión.</div>
+      </div>
+
+      <h3>Objetivos generales</h3>
+      <ol>
+        <li>Mejorar condiciones laborales y de vida.</li>
+        <li>Combatir desigualdades e injusticias.</li>
+        <li>Defender derechos humanos, justicia social e igualdad de género.</li>
+        <li>Proteger medio ambiente y recursos naturales.</li>
+        <li>Acceder y regularizar tierra y vivienda.</li>
+        <li>Incidir en políticas públicas y agendas de gobierno.</li>
+        <li>Cuestionar el statu quo y estructuras de poder.</li>
+        <li>Construir nuevas relaciones sociales.</li>
+        <li>Articularse con otros movimientos a nivel nacional e internacional.</li>
+      </ol>
+      <div class="memory"><span class="mnemonic">MEMORIA: "VIDA – DERECHOS – TIERRA – POLÍTICA – CAMBIO – REDES"</span>Pensá los objetivos como una escalera: condiciones de vida → derechos → territorio → políticas → transformación → articulación.</div>
+
+      <h3>América Latina: ejemplos esenciales</h3>
+      <p><b>FUCVAM (Uruguay):</b> cooperativas de vivienda por ayuda mutua; partió de una reivindicación concreta —vivienda— y también participó en luchas políticas más amplias.</p>
+      <p><b>MST (Brasil):</b> ejemplo paradigmático de movimiento campesino vinculado a la reforma agraria.</p>
+      <p><b>Zapatismo (México) y movimiento popular boliviano de 2003:</b> ejemplos de "nuevos movimientos sociales" que articulan dimensiones culturales y políticas.</p>
+    </section>
+
+    <section id="objetivos" class="chapter">
+      <div class="chapter-head"><div class="seal">02</div><div><h2>Objetivos — desarrollo</h2><span class="sub">De la demanda puntual a la transformación</span></div></div>
+      <p>Los movimientos sociales no persiguen necesariamente una única meta. El material muestra que pueden comenzar con una reivindicación concreta —por ejemplo, vivienda o tierra— y ampliar su acción hacia transformaciones políticas, sociales y culturales.</p>
+      <div class="memory"><b>Idea central:</b> una reivindicación concreta puede convertirse en una demanda política más amplia.</div>
+      <div class="grid">
+        <div class="card"><b>Laboral y económico</b>Mejorar condiciones de trabajo, empleo y calidad de vida.</div>
+        <div class="card"><b>Social</b>Combatir desigualdades e injusticias estructurales.</div>
+        <div class="card"><b>Derechos</b>Defender derechos humanos, civiles, igualdad de género y justicia social.</div>
+        <div class="card"><b>Ambiental</b>Proteger ambiente y recursos naturales.</div>
+        <div class="card"><b>Territorial</b>Acceso a vivienda, tierra urbana y reforma agraria rural.</div>
+        <div class="card"><b>Político-institucional</b>Incidir en políticas públicas y agendas de gobierno.</div>
+        <div class="card"><b>Cultural-identitario</b>Afirmar identidades étnicas, de género y comunitarias.</div>
+        <div class="card"><b>Internacional</b>Articular demandas en redes y foros globales.</div>
+      </div>
+      <h3>¿Cómo intentan conseguirlos?</h3>
+      <p>Mediante <span class="key">acción colectiva coordinada</span>, identidad y solidaridad compartidas, alianzas con sindicatos, ONG y partidos, campañas de concientización y participación en espacios nacionales e internacionales.</p>
+      <p><b>Ejemplo clave — FUCVAM:</b> comenzó alrededor del acceso a la vivienda mediante cooperativas de ayuda mutua y posteriormente participó en una lucha política más amplia vinculada a la democracia uruguaya. El ejemplo sirve para recordar que los objetivos pueden <span class="key">ampliarse y articularse</span> con otros actores.</p>
+      <div class="memory"><span class="mnemonic">PENSÁ: DEMANDA → ORGANIZACIÓN → ALIANZAS → PRESIÓN → CAMBIO</span></div>
+    </section>
+
+    <section id="cuestion" class="chapter">
+      <div class="chapter-head"><div class="seal">03</div><div><h2>La Cuestión Social</h2><span class="sub">De la Revolución Industrial al conflicto de clases</span></div></div>
+      <div class="memory"><span class="mnemonic">REVOLUCIÓN INDUSTRIAL → URBANIZACIÓN → DESIGUALDAD → CONFLICTO</span></div>
+      <p>El término surgió en el <span class="key">siglo XIX europeo</span> para abordar problemas derivados de la Revolución Industrial: pobreza, baja calidad de vida obrera, vivienda, salud, salubridad, organización de trabajadores, huelgas y conflictos.</p>
+      <div class="grid">
+        <div class="card"><b>Burguesía</b>Posee capital y medios de producción.</div>
+        <div class="card"><b>Proletariado</b>Clase trabajadora explotada según la perspectiva marxista.</div>
+        <div class="card"><b>Problemas</b>Pobreza, explotación, precariedad laboral y sanitaria.</div>
+        <div class="card"><b>Respuestas</b>Políticas, ideológicas y religiosas.</div>
+      </div>
+      <p><b>Perspectiva marxista:</b> la Cuestión Social surge de intercambios desiguales entre burguesía y proletariado y, según el material, su solución pasaría por la revolución proletaria.</p>
+      <p><b>En sistemas liberales:</b> se plantea la intervención del Estado para equilibrar la situación y garantizar justicia para la clase obrera.</p>
+      <p><b>Respuestas destacadas:</b> Bismarck, nuevo liberalismo británico, solidarismo francés; comunismo, socialismo y anarquismo; catolicismo social/cristianismo social.</p>
+
+      <h3>Tipos de movimientos sociales</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Tipo</th><th>Idea / ejemplo del material</th></tr>
+        <tr><td>Cualidad del cambio</td><td>Innovadores o progresistas</td><td>Promueven nueva organización social. Ej.: movimiento obrero, feminista pro-aborto.</td></tr>
+        <tr><td></td><td>Conservadores</td><td>Resisten cambios o legitiman estructuras tradicionales. Ej.: monárquicos, pro-vida.</td></tr>
+        <tr><td>Objetivo del cambio</td><td>Estructurales / sociopolíticos</td><td>Modifican total o parcialmente el aparato legal. Ej.: derechos civiles en EE.UU.</td></tr>
+        <tr><td></td><td>Socioculturales</td><td>Modifican creencias, valores o modos de vida. Ej.: feminismo contemporáneo.</td></tr>
+        <tr><td>Estrategia</td><td>Lógica instrumental</td><td>Busca conquistar el poder. Ej.: movimientos revolucionarios.</td></tr>
+        <tr><td></td><td>Lógica expresiva</td><td>Defiende valores o identidades frente al orden hegemónico. Ej.: movimiento LGBT.</td></tr>
+        <tr><td>Historia</td><td>Viejos / tradicionales</td><td>Surgidos al inicio de sociedades modernas. Ej.: sufragismo.</td></tr>
+        <tr><td></td><td>Nuevos</td><td>Sociedades de consumo/postindustriales; identidad, cultura y derechos civiles. Ej.: altermundismo.</td></tr>
+        <tr><td>Geografía</td><td>Locales</td><td>Ciudad, comunidad, barrio. Ej.: "Nuestras hijas de regreso a casa".</td></tr>
+        <tr><td></td><td>Nacionales</td><td>Demandas de alcance nacional dirigidas al Estado.</td></tr>
+        <tr><td></td><td>Transnacionales</td><td>Redes globales. Ej.: Greenpeace.</td></tr>
+      </table>
+      </div>
+    </section>
+
+    <section id="bienestar" class="chapter">
+      <div class="chapter-head"><div class="seal">04</div><div><h2>Estado de Bienestar</h2><span class="sub">Redistribución y derechos sociales</span></div></div>
+      <p>Modelo político y económico en el que el Estado proporciona servicios vinculados a derechos sociales y busca redistribuir la riqueza para promover el bienestar general.</p>
+      <div class="memory"><b>Recordá 4 palabras:</b> <span class="key">ESTADO → REDISTRIBUCIÓN → DERECHOS → SERVICIOS</span></div>
+      <ul>
+        <li>Intervención del gobierno en economía y sociedad.</li>
+        <li>Redistribución mediante <b>impuestos y tasas</b>.</li>
+        <li>Salud y educación gratuitas/universales según el material.</li>
+        <li>Pensiones y subsidios de desempleo, invalidez, orfandad y viudez.</li>
+        <li>Políticas de vivienda y financiamiento.</li>
+        <li>Buenas prestaciones laborales.</li>
+      </ul>
+    </section>
+
+    <section id="nuevas" class="chapter">
+      <div class="chapter-head"><div class="seal">05</div><div><h2>Nuevas reivindicaciones sociales</h2><span class="sub">Identidad, género, ambiente y territorio</span></div></div>
+      <div class="memory"><b>Importante:</b> esta sección amplía el material del PDF con contexto general para ayudarte a estudiar el concepto de "nuevos movimientos sociales".</div>
+      <p>Las nuevas reivindicaciones aparecen con fuerza cuando las demandas sociales dejan de concentrarse exclusivamente en el conflicto laboral o económico y también incorporan cuestiones de <span class="key">identidad, cultura, derechos, ambiente, género, territorio y calidad de vida</span>.</p>
+
+      <h3>¿Qué cambia respecto de los movimientos tradicionales?</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><th>Movimientos tradicionales</th><th>Nuevas reivindicaciones</th></tr>
+        <tr><td>Mayor centralidad del trabajo y la clase.</td><td>Mayor diversidad de identidades y causas.</td></tr>
+        <tr><td>Organización alrededor de conflictos económicos.</td><td>También incorporan cultura, género, ambiente y derechos civiles.</td></tr>
+        <tr><td>Demandas frecuentemente dirigidas al Estado.</td><td>Combinan presión institucional con movilización social, redes y opinión pública.</td></tr>
+        <tr><td>Identidad principalmente de clase o sector.</td><td>Identidades múltiples: género, etnia, territorio, ambiente, cultura, derechos.</td></tr>
+      </table>
+      </div>
+
+      <h3>Principales áreas de reivindicación</h3>
+      <div class="grid">
+        <div class="card"><b>🌱 Ambiental</b>Defensa del ambiente, recursos naturales y territorios.</div>
+        <div class="card"><b>⚖️ Derechos civiles</b>Igualdad ante la ley, libertades y reconocimiento de derechos.</div>
+        <div class="card"><b>♀ Género</b>Igualdad, autonomía y cuestionamiento de relaciones de poder.</div>
+        <div class="card"><b>🧑🏽‍🤝‍🧑 Identidad</b>Reconocimiento de identidades étnicas, culturales y comunitarias.</div>
+        <div class="card"><b>🏠 Vivienda y territorio</b>Derecho a la ciudad, vivienda, tierra y permanencia territorial.</div>
+        <div class="card"><b>🌎 Globalización</b>Críticas a efectos sociales y culturales de la globalización y búsqueda de alternativas.</div>
+      </div>
+      <p>El material menciona como ejemplos el <span class="key">zapatismo</span>, el movimiento popular boliviano de 2003, el feminismo, el movimiento LGBT y el movimiento altermundista. También señala que los nuevos movimientos pueden articular dimensiones culturales y políticas.</p>
+      <div class="memory"><span class="mnemonic">NUEVAS = IDENTIDAD + CULTURA + DERECHOS + AMBIENTE + TERRITORIO</span></div>
+    </section>
+
+    <section id="revoluciones" class="chapter">
+      <div class="chapter-head"><div class="seal">06</div><div><h2>Las cuatro grandes revoluciones latinoamericanas</h2><span class="sub">México · Bolivia · Cuba · Nicaragua</span></div></div>
+      <div class="timeline">
+        <div class="event"><b>1910–1917</b><span><b>México.</b> Revolución iniciada el 20/11/1910. Porfiriato → Madero → Zapata/Villa/Orozco → Plan de Ayala → Constitución de 1917.</span></div>
+        <div class="event"><b>1952</b><span><b>Bolivia.</b> Revolución Nacional liderada por el MNR de Víctor Paz Estenssoro. Sufragio universal + nacionalización de minas + reforma agraria.</span></div>
+        <div class="event"><b>1959</b><span><b>Cuba.</b> Movimiento 26 de Julio → Fidel Castro → caída de Batista → orientación comunista y alineamiento con la URSS.</span></div>
+        <div class="event"><b>1979</b><span><b>Nicaragua.</b> FSLN → caída de Somoza → gobierno sandinista → conflicto posterior con la Contra.</span></div>
+      </div>
+
+      <h3>🇲🇽 México</h3>
+      <p><b>Porfiriato:</b> Porfirio Díaz, 1876–1911. Concentración de poder, riqueza y tierra; falta de libertad política; despojo de tierras; analfabetismo; represión de huelgas.</p>
+      <p><b>20 de noviembre de 1910:</b> inicio de la revolución.</p>
+      <p><b>Actores:</b> Pascual Orozco — Chihuahua; Pancho Villa — campesinos del norte; Emiliano Zapata — campesinos y líderes populares del sur.</p>
+      <p><b>25 de mayo de 1911:</b> renuncia de Díaz.</p>
+      <p><b>Plan de Ayala:</b> 28/11/1911; impulsado por Zapata; desconocimiento de Madero y reivindicación de tierras campesinas. Frase del material: <span class="key">"La tierra es de quien la trabaja".</span></p>
+      <p><b>Consecuencias:</b> Constitución de 1917, reforma agraria, educación pública, nacionalización del petróleo, mejoras laborales/sindicalismo y reparto de latifundios.</p>
+
+      <h3>🇧🇴 Bolivia</h3>
+      <p><b>9 de abril de 1952:</b> insurrección popular que llevó al MNR al poder. Contexto: crisis de 1929, Guerra del Chaco, desigualdad y movilización minera/obrera.</p>
+      <p><b>Víctor Paz Estenssoro:</b> figura central. Reformas: <span class="key">sufragio universal + nacionalización de minas + reforma agraria + políticas sociales</span>.</p>
+      <p><b>Legado:</b> ampliación del electorado, reforma del ejército, milicias, nacionalización minera, reforma agraria y educativa. El MNR fue derrocado en 1964.</p>
+
+      <h3>🇨🇺 Cuba</h3>
+      <p><b>Batista:</b> llegó por golpe de Estado en 1952; dictadura hasta 1959, represión, censura, desigualdad y vínculos estrechos con EE.UU.</p>
+      <p><b>Movimiento 26 de Julio:</b> dirigido por Fidel Castro. Nombre ligado al asalto al Cuartel Moncada del 26/07/1953.</p>
+      <p><b>1956:</b> expedición del <span class="key">Granma</span>; Sierra Maestra; Radio Rebelde; apoyo popular.</p>
+      <p><b>1 de enero de 1959:</b> Batista huye y triunfa la revolución.</p>
+      <p><b>Che Guevara:</b> argentino, médico, líder guerrillero; participa en la revolución y luego ocupa cargos en el gobierno cubano. En 1965 abandona Cuba; muere en Bolivia en 1967.</p>
+      <p><b>1960:</b> alineamiento con la URSS y ruptura con EE.UU., seguida de embargo económico según el material.</p>
+
+      <h3>🇳🇮 Nicaragua</h3>
+      <p><b>Dinastía Somoza:</b> control desde 1937 hasta 1979; autoritarismo, corrupción, nepotismo, concentración económica y represión mediante la Guardia Nacional.</p>
+      <p><b>FSLN:</b> fundado en 1961, inspirado en Augusto César Sandino; articuló obreros, campesinos e intelectuales.</p>
+      <p><b>1978:</b> asesinato de Pedro Joaquín Chamorro → aumento de protestas.</p>
+      <p><b>19 de julio de 1979:</b> triunfo sandinista en Managua y caída de Somoza.</p>
+      <p><b>Contra:</b> conflicto armado de los años 80 contra el gobierno sandinista, con apoyo financiero y militar de EE.UU.</p>
+    </section>
+
+    <section id="cordoba" class="chapter">
+      <div class="chapter-head"><div class="seal">07</div><div><h2>Reforma Universitaria de Córdoba (1918)</h2><span class="sub">Autonomía, cogobierno y democratización</span></div></div>
+      <div class="memory"><b>⚠️ Esta parte no aparece desarrollada en el PDF adjunto:</b> se incorpora como complemento de estudio general para cubrir el programa que indicás.</div>
+      <p>La <span class="key">Reforma Universitaria de Córdoba</span> comenzó en Argentina en 1918, a partir de la movilización de estudiantes de la Universidad Nacional de Córdoba. Se convirtió en un acontecimiento fundamental de la historia universitaria latinoamericana porque cuestionó la estructura tradicional de la universidad y defendió una universidad más abierta, moderna y vinculada con la sociedad.</p>
+
+      <h3>Contexto</h3>
+      <p>La universidad mantenía estructuras consideradas por los estudiantes como autoritarias, jerárquicas y poco democráticas. Los estudiantes reclamaron cambios en la enseñanza, en el gobierno universitario y en la relación entre universidad y sociedad.</p>
+
+      <h3>Principales principios</h3>
+      <div class="grid">
+        <div class="card"><b>Autonomía universitaria</b>Capacidad de la universidad para gobernarse y organizar sus asuntos sin subordinación indebida al poder político.</div>
+        <div class="card"><b>Cogobierno</b>Participación de distintos estamentos universitarios en el gobierno de la institución, especialmente la representación estudiantil.</div>
+        <div class="card"><b>Libertad de cátedra</b>Defensa de la libertad académica y de enseñanza.</div>
+        <div class="card"><b>Modernización</b>Crítica a métodos tradicionales y búsqueda de una universidad renovada.</div>
+        <div class="card"><b>Concursos docentes</b>Impulso a mecanismos de selección y renovación del cuerpo docente.</div>
+        <div class="card"><b>Extensión universitaria</b>Mayor vínculo entre universidad y sociedad.</div>
+        <div class="card"><b>Democratización</b>Cuestionamiento de estructuras cerradas y autoritarias.</div>
+      </div>
+
+      <h3>¿Por qué fue importante para América Latina?</h3>
+      <p>El movimiento cordobés tuvo una fuerte influencia regional. Sus ideas fueron retomadas por organizaciones estudiantiles de otros países y contribuyeron a pensar la universidad como una institución vinculada con la sociedad y no exclusivamente con las élites.</p>
+
+      <h3>Para el examen</h3>
+      <p>Si te preguntan "¿qué fue la Reforma de Córdoba?", una respuesta corta y segura es:</p>
+      <div class="memory"><span class="mnemonic">CÓRDOBA 1918 = ESTUDIANTES + AUTONOMÍA + COGOBIERNO + LIBERTAD DE CÁTEDRA + UNIVERSIDAD/SOCIEDAD</span></div>
+    </section>
+
+    <section id="comparacion" class="chapter">
+      <div class="chapter-head"><div class="seal" style="--accent:#a97f24">⊞</div><div><h2>Cuadro comparativo para memorizar</h2><span class="sub">Las cuatro revoluciones, lado a lado</span></div></div>
+      <div class="table-wrap">
+      <table>
+        <tr><th></th><th>🇲🇽 México</th><th>🇧🇴 Bolivia</th><th>🇨🇺 Cuba</th><th>🇳🇮 Nicaragua</th></tr>
+        <tr><td><b>Año clave</b></td><td>1910 / 1911</td><td>1952</td><td>1959</td><td>1979</td></tr>
+        <tr><td><b>Régimen</b></td><td>Porfiriato</td><td>Junta Militar</td><td>Batista</td><td>Somoza</td></tr>
+        <tr><td><b>Fuerza</b></td><td>Villa, Zapata, Orozco</td><td>MNR</td><td>M-26-7</td><td>FSLN</td></tr>
+        <tr><td><b>Figura principal</b></td><td>Madero / Zapata / Villa</td><td>Paz Estenssoro</td><td>Fidel Castro</td><td>Daniel Ortega</td></tr>
+        <tr><td><b>Hito</b></td><td>Plan de Ayala / Constitución 1917</td><td>Nacionalización + sufragio</td><td>Moncada / Granma</td><td>Asesinato Chamorro</td></tr>
+        <tr><td><b>Tierra</b></td><td>Reforma agraria</td><td>Reforma agraria</td><td>Nacionalización de industria y tierra</td><td>Reformas sociales</td></tr>
+        <tr><td><b>Orientación final</b></td><td>Nacionalista</td><td>Nacionalista</td><td>Marxista-leninista / URSS</td><td>Socialista</td></tr>
+        <tr><td><b>Conflicto posterior</b></td><td>—</td><td>Golpe de Estado 1964</td><td>Embargo de EE.UU.</td><td>Guerra contra la Contra</td></tr>
+      </table>
+      </div>
+      <div class="memory" style="--accent:#a97f24"><span class="mnemonic">MÉXICO = TIERRA · BOLIVIA = MINAS · CUBA = BATISTA/CASTRO · NICARAGUA = SOMOZA/SANDINISMO</span></div>
+
+      <h3>Patrón común de las cuatro</h3>
+      <ol>
+        <li>Régimen autoritario/dictatorial.</li>
+        <li>Concentración de tierra, riqueza y poder.</li>
+        <li>Desigualdad social y pobreza.</li>
+        <li>Movilización de sectores populares.</li>
+        <li>Reforma agraria como demanda central.</li>
+        <li>Transformación política/social.</li>
+      </ol>
+      <p><b>Clave de examen:</b> distinguir <span class="key">causas estructurales</span> (desigualdad, pobreza rural, falta de democracia) de <span class="key">desencadenantes inmediatos</span> (hecho que precipita la movilización).</p>
+    </section>
+
+    <section id="conexiones" class="chapter">
+      <div class="chapter-head"><div class="seal" style="--accent:#102943">⟲</div><div><h2>Conexiones que te pueden salvar en el examen</h2></div></div>
+      <div class="card" style="--accent:#102943"><b>1. Cuestión Social → Movimientos sociales</b>La industrialización generó desigualdades y conflictos. Esos problemas favorecieron la organización colectiva y las reivindicaciones de trabajadores y otros sectores.</div>
+      <div class="card" style="--accent:#2b6a70;margin-top:10px"><b>2. Movimientos sociales → Nuevas reivindicaciones</b>Las demandas se diversifican: además de trabajo y condiciones económicas aparecen identidad, género, ambiente, derechos civiles y cultura.</div>
+      <div class="card" style="--accent:#2f6f4f;margin-top:10px"><b>3. Estado de Bienestar → respuesta estatal</b>Frente a desigualdades y conflictos sociales, el Estado puede intervenir mediante políticas de redistribución y servicios sociales.</div>
+      <div class="card" style="--accent:#9a2c2c;margin-top:10px"><b>4. Revoluciones latinoamericanas → transformación del poder</b>México, Bolivia, Cuba y Nicaragua muestran procesos en los que sectores movilizados enfrentan regímenes autoritarios y buscan transformaciones políticas, económicas y sociales.</div>
+      <div class="card" style="--accent:#3a3f68;margin-top:10px"><b>5. Córdoba → movimiento estudiantil</b>La Reforma Universitaria muestra otra dimensión de la movilización colectiva: estudiantes que cuestionan estructuras institucionales y reclaman democratización, autonomía y participación.</div>
+      <div class="memory" style="--accent:#102943;margin-top:16px"><span class="mnemonic">HILO GENERAL: PROBLEMA → ORGANIZACIÓN → REIVINDICACIÓN → MOVILIZACIÓN → RESPUESTA/TRANSFORMACIÓN</span></div>
+    </section>
+
+    <section id="quiz" class="chapter">
+      <div class="chapter-head"><div class="seal" style="--accent:#2f6f4f">?</div><div><h2>Autoevaluación</h2><span class="sub">Intentá responder mentalmente antes de revelar cada respuesta</span></div></div>
+      <p class="quiz-progress" id="quizProgress">0 / 8 respuestas reveladas</p>
+      <div class="quiz-q"><p class="q">1. ¿Qué diferencia a un movimiento social de una protesta espontánea?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Su organización, coordinación, planificación, identidad, solidaridad y continuidad en el tiempo.</div></div>
+      <div class="quiz-q"><p class="q">2. ¿Cuál es el objetivo general de los movimientos sociales?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Lograr cambio social frente a desigualdades e injusticias y mejorar condiciones de vida y laborales.</div></div>
+      <div class="quiz-q"><p class="q">3. ¿Qué fue la Cuestión Social?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">El conjunto de problemas sociales, laborales e ideológicos derivados de la industrialización y urbanización, especialmente desde el siglo XIX.</div></div>
+      <div class="quiz-q"><p class="q">4. ¿Qué tres reformas recordás de Bolivia 1952?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Sufragio universal, nacionalización de las minas y reforma agraria; también hubo políticas sociales y reforma militar.</div></div>
+      <div class="quiz-q"><p class="q">5. ¿Qué fue el Plan de Ayala?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Proclama de Zapata de 1911 contra Madero, centrada en la restitución de tierras a comunidades campesinas.</div></div>
+      <div class="quiz-q"><p class="q">6. ¿Qué relación hay entre Moncada, M-26-7 y Granma?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Moncada (1953) da nombre/sentido al M-26-7; luego, en 1956, el movimiento regresó a Cuba en el yate Granma para continuar la lucha.</div></div>
+      <div class="quiz-q"><p class="q">7. ¿Qué fue el FSLN?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Frente Sandinista de Liberación Nacional, fundado en 1961 e inspirado en Sandino; lideró la revolución que derrocó a Somoza en 1979.</div></div>
+      <div class="quiz-q"><p class="q">8. ¿Cuál es el patrón común de las cuatro revoluciones?</p><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Autoritarismo + concentración de poder/riqueza/tierra + desigualdad + movilización popular + reforma agraria + transformación política/social.</div></div>
+    </section>
+
+    <section id="flashcards" class="chapter">
+      <div class="chapter-head"><div class="seal" style="--accent:#9a2c2c">◈</div><div><h2>Tarjetas de memoria</h2><span class="sub">Repaso rápido pregunta–respuesta</span></div></div>
+      <div class="flash-wrap">
+        <div class="flash-count" id="flashCount">Tarjeta 0 / 0</div>
+        <div class="flash">
+          <div id="flashQ" class="q">Hacé clic en "Siguiente" para comenzar</div>
+          <div id="flashA" class="a"></div>
+        </div>
+        <div class="flash-controls">
+          <button class="secondary" onclick="prevCard()">← Anterior</button>
+          <button onclick="nextCard()">Siguiente tarjeta</button>
+          <button class="secondary" onclick="shuffleCards()">Mezclar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="chapter">
+      <div class="chapter-head"><div class="seal" style="--accent:#3a3f68">▤</div><div><h2>Método de estudio recomendado</h2></div></div>
+      <div class="grid">
+        <div class="card"><b>1 — Lectura activa</b>Leé una sección y cerrá el texto.</div>
+        <div class="card"><b>2 — Recuperación</b>Explicá con tus palabras qué recordás.</div>
+        <div class="card"><b>3 — Asociación</b>Usá las frases de memoria y fechas.</div>
+        <div class="card"><b>4 — Comparación</b>Contrastá México, Bolivia, Cuba y Nicaragua.</div>
+        <div class="card"><b>5 — Examen</b>Respondé las preguntas sin mirar.</div>
+        <div class="card"><b>6 — Repetición</b>Volvé a las tarjetas al día siguiente.</div>
+      </div>
+    </section>
+
+    <footer>Guía basada en el material de estudio proporcionado. La Reforma de Córdoba y la sección de nuevas reivindicaciones incluyen además contexto complementario para cubrir el programa solicitado.</footer>
+    </main>
+  </div>
 </div>
-<div class="memory"><b>Regla de oro:</b> cuando estudies un movimiento o revolución, preguntá siempre: <b>¿contexto → causas → actores → acción → resultado → legado?</b></div>
-</section>
 
-<section id="ms">
-<h2>1. Movimientos sociales</h2>
-<h3>¿Qué son?</h3>
-<p>Son <span class="key">espacios de participación ciudadana</span> donde la sociedad se organiza y actúa colectivamente para alcanzar objetivos comunes. Formalmente, son grupos de base organizados alrededor de una causa que, de manera <span class="key">coordinada, planificada y sostenida en el tiempo</span>, buscan generar cambio social.</p>
-<div class="memory"><b>⚠️ Diferencia clave:</b> no son simples estallidos espontáneos. Tienen organización, estrategia, identidad, solidaridad y cierta permanencia.</div>
-
-<h3>Elementos que tenés que recordar</h3>
-<div class="grid">
-<div class="card"><b>1. Origen</b><br>Desigualdades, injusticias y problemas no resueltos.</div>
-<div class="card"><b>2. Identidad</b><br>Objetivos, ideas, creencias e intereses comunes.</div>
-<div class="card"><b>3. Solidaridad</b><br>Apoyo mutuo y colaboración.</div>
-<div class="card"><b>4. Acción colectiva</b><br>Manifestaciones, protestas, boicots, campañas.</div>
-<div class="card"><b>5. Estructura</b><br>Cierta estabilidad y estructuras frecuentemente horizontales.</div>
-<div class="card"><b>6. Recursos</b><br>Predominan recursos simbólicos: liderazgo, compromiso, narrativas y opinión pública.</div>
-<div class="card"><b>7. Poder</b><br>Relación generalmente conflictiva con el poder establecido.</div>
-<div class="card"><b>8. Ámbito</b><br>Actúan fuera del ámbito institucional, diferenciándose de partidos, sindicatos y grupos de presión.</div>
-</div>
-
-<h3>🎯 Objetivos</h3>
-<ol>
-<li>Mejorar condiciones laborales y de vida.</li><li>Combatir desigualdades e injusticias.</li><li>Defender derechos humanos, justicia social e igualdad de género.</li>
-<li>Proteger medio ambiente y recursos naturales.</li><li>Acceder y regularizar tierra y vivienda.</li><li>Incidir en políticas públicas y agendas de gobierno.</li>
-<li>Cuestionar el statu quo y estructuras de poder.</li><li>Construir nuevas relaciones sociales.</li><li>Articularse con otros movimientos a nivel nacional e internacional.</li>
-</ol>
-<div class="memory"><span class="mnemonic">MEMORIA: “VIDA–DERECHOS–TIERRA–POLÍTICA–CAMBIO–REDES”</span><br>
-Pensá los objetivos como una escalera: condiciones de vida → derechos → territorio → políticas → transformación → articulación.</div>
-
-<h3>🌎 América Latina: ejemplos esenciales</h3>
-<p><b>FUCVAM (Uruguay):</b> cooperativas de vivienda por ayuda mutua; partió de una reivindicación concreta —vivienda— y también participó en luchas políticas más amplias.</p>
-<p><b>MST (Brasil):</b> ejemplo paradigmático de movimiento campesino vinculado a la reforma agraria.</p>
-<p><b>Zapatismo (México) y movimiento popular boliviano de 2003:</b> ejemplos de “nuevos movimientos sociales” que articulan dimensiones culturales y políticas.</p>
-</section>
-
-
-<section id="objetivos">
-<h2>2. Objetivos de los movimientos sociales — desarrollo</h2>
-<p>Los movimientos sociales no persiguen necesariamente una única meta. El material muestra que pueden comenzar con una reivindicación concreta —por ejemplo, vivienda o tierra— y ampliar su acción hacia transformaciones políticas, sociales y culturales.</p>
-<h3>De la demanda puntual a la transformación</h3>
-<div class="memory"><b>Idea central:</b> una reivindicación concreta puede convertirse en una demanda política más amplia.</div>
-<div class="grid">
-<div class="card"><b>Laboral y económico</b><br>Mejorar condiciones de trabajo, empleo y calidad de vida.</div>
-<div class="card"><b>Social</b><br>Combatir desigualdades e injusticias estructurales.</div>
-<div class="card"><b>Derechos</b><br>Defender derechos humanos, civiles, igualdad de género y justicia social.</div>
-<div class="card"><b>Ambiental</b><br>Proteger ambiente y recursos naturales.</div>
-<div class="card"><b>Territorial</b><br>Acceso a vivienda, tierra urbana y reforma agraria rural.</div>
-<div class="card"><b>Político-institucional</b><br>Incidir en políticas públicas y agendas de gobierno.</div>
-<div class="card"><b>Cultural-identitario</b><br>Afirmar identidades étnicas, de género y comunitarias.</div>
-<div class="card"><b>Internacional</b><br>Articular demandas en redes y foros globales.</div>
-</div>
-<h3>¿Cómo intentan conseguirlos?</h3>
-<p>Mediante <span class="key">acción colectiva coordinada</span>, identidad y solidaridad compartidas, alianzas con sindicatos, ONG y partidos, campañas de concientización y participación en espacios nacionales e internacionales.</p>
-<p><b>Ejemplo clave — FUCVAM:</b> comenzó alrededor del acceso a la vivienda mediante cooperativas de ayuda mutua y posteriormente participó en una lucha política más amplia vinculada a la democracia uruguaya. El ejemplo sirve para recordar que los objetivos pueden <span class="key">ampliarse y articularse</span> con otros actores.</p>
-<div class="memory"><span class="mnemonic">PENSÁ: DEMANDA → ORGANIZACIÓN → ALIANZAS → PRESIÓN → CAMBIO</span></div>
-</section>
-<section id="cuestion">
-<h2>2. La Cuestión Social</h2>
-<div class="memory"><span class="mnemonic">REVOLUCIÓN INDUSTRIAL → URBANIZACIÓN → DESIGUALDAD → CONFLICTO</span></div>
-<p>El término surgió en el <span class="key">siglo XIX europeo</span> para abordar problemas derivados de la Revolución Industrial: pobreza, baja calidad de vida obrera, vivienda, salud, salubridad, organización de trabajadores, huelgas y conflictos.</p>
-<div class="grid">
-<div class="card"><b>Burguesía</b><br>Posee capital y medios de producción.</div>
-<div class="card"><b>Proletariado</b><br>Clase trabajadora explotada según la perspectiva marxista.</div>
-<div class="card"><b>Problemas</b><br>Pobreza, explotación, precariedad laboral y sanitaria.</div>
-<div class="card"><b>Respuestas</b><br>Políticas, ideológicas y religiosas.</div>
-</div>
-<p><b>Perspectiva marxista:</b> la Cuestión Social surge de intercambios desiguales entre burguesía y proletariado y, según el material, su solución pasaría por la revolución proletaria.</p>
-<p><b>En sistemas liberales:</b> se plantea la intervención del Estado para equilibrar la situación y garantizar justicia para la clase obrera.</p>
-<p><b>Respuestas destacadas:</b> Bismarck, nuevo liberalismo británico, solidarismo francés; comunismo, socialismo y anarquismo; catolicismo social/cristianismo social.</p>
-
-<h3>Tipos de movimientos sociales</h3>
-<table>
-<tr><th>Criterio</th><th>Tipo</th><th>Idea / ejemplo del material</th></tr>
-<tr><td>Cualidad del cambio</td><td>Innovadores o progresistas</td><td>Promueven nueva organización social. Ej.: movimiento obrero, feminista pro-aborto.</td></tr>
-<tr><td></td><td>Conservadores</td><td>Resisten cambios o legitiman estructuras tradicionales. Ej.: monárquicos, pro-vida.</td></tr>
-<tr><td>Objetivo del cambio</td><td>Estructurales / sociopolíticos</td><td>Modifican total o parcialmente el aparato legal. Ej.: derechos civiles en EE.UU.</td></tr>
-<tr><td></td><td>Socioculturales</td><td>Modifican creencias, valores o modos de vida. Ej.: feminismo contemporáneo.</td></tr>
-<tr><td>Estrategia</td><td>Lógica instrumental</td><td>Busca conquistar el poder. Ej.: movimientos revolucionarios.</td></tr>
-<tr><td></td><td>Lógica expresiva</td><td>Defiende valores o identidades frente al orden hegemónico. Ej.: movimiento LGBT.</td></tr>
-<tr><td>Historia</td><td>Viejos / tradicionales</td><td>Surgidos al inicio de sociedades modernas. Ej.: sufragismo.</td></tr>
-<tr><td></td><td>Nuevos</td><td>Sociedades de consumo/postindustriales; identidad, cultura y derechos civiles. Ej.: altermundismo.</td></tr>
-<tr><td>Geografía</td><td>Locales</td><td>Ciudad, comunidad, barrio. Ej.: “Nuestras hijas de regreso a casa”.</td></tr>
-<tr><td></td><td>Nacionales</td><td>Demandas de alcance nacional dirigidas al Estado.</td></tr>
-<tr><td></td><td>Transnacionales</td><td>Redes globales. Ej.: Greenpeace.</td></tr>
-</table>
-</section>
-
-<section id="bienestar">
-<h2>3. Estado de Bienestar</h2>
-<p>Modelo político y económico en el que el Estado proporciona servicios vinculados a derechos sociales y busca redistribuir la riqueza para promover el bienestar general.</p>
-<div class="memory"><b>Recordá 4 palabras:</b> <span class="key">ESTADO → REDISTRIBUCIÓN → DERECHOS → SERVICIOS</span></div>
-<ul>
-<li>Intervención del gobierno en economía y sociedad.</li>
-<li>Redistribución mediante <b>impuestos y tasas</b>.</li>
-<li>Salud y educación gratuitas/universales según el material.</li>
-<li>Pensiones y subsidios de desempleo, invalidez, orfandad y viudez.</li>
-<li>Políticas de vivienda y financiamiento.</li>
-<li>Buenas prestaciones laborales.</li>
-</ul>
-</section>
-
-
-<section id="nuevas">
-<h2>5. Nuevas reivindicaciones sociales</h2>
-<div class="memory"><b>Importante:</b> esta sección amplía el material del PDF con contexto general para ayudarte a estudiar el concepto de “nuevos movimientos sociales”.</div>
-<p>Las nuevas reivindicaciones aparecen con fuerza cuando las demandas sociales dejan de concentrarse exclusivamente en el conflicto laboral o económico y también incorporan cuestiones de <span class="key">identidad, cultura, derechos, ambiente, género, territorio y calidad de vida</span>.</p>
-<h3>¿Qué cambia respecto de los movimientos tradicionales?</h3>
-<table>
-<tr><th>Movimientos tradicionales</th><th>Nuevas reivindicaciones</th></tr>
-<tr><td>Mayor centralidad del trabajo y la clase.</td><td>Mayor diversidad de identidades y causas.</td></tr>
-<tr><td>Organización alrededor de conflictos económicos.</td><td>También incorporan cultura, género, ambiente y derechos civiles.</td></tr>
-<tr><td>Demandas frecuentemente dirigidas al Estado.</td><td>Combinan presión institucional con movilización social, redes y opinión pública.</td></tr>
-<tr><td>Identidad principalmente de clase o sector.</td><td>Identidades múltiples: género, etnia, territorio, ambiente, cultura, derechos.</td></tr>
-</table>
-<h3>Principales áreas de reivindicación</h3>
-<div class="grid">
-<div class="card"><b>🌱 Ambiental</b><br>Defensa del ambiente, recursos naturales y territorios.</div>
-<div class="card"><b>⚖️ Derechos civiles</b><br>Igualdad ante la ley, libertades y reconocimiento de derechos.</div>
-<div class="card"><b>♀ Género</b><br>Igualdad, autonomía y cuestionamiento de relaciones de poder.</div>
-<div class="card"><b>🧑🏽‍🤝‍🧑 Identidad</b><br>Reconocimiento de identidades étnicas, culturales y comunitarias.</div>
-<div class="card"><b>🏠 Vivienda y territorio</b><br>Derecho a la ciudad, vivienda, tierra y permanencia territorial.</div>
-<div class="card"><b>🌎 Globalización</b><br>Críticas a efectos sociales y culturales de la globalización y búsqueda de alternativas.</div>
-</div>
-<p>El material menciona como ejemplos el <span class="key">zapatismo</span>, el movimiento popular boliviano de 2003, el feminismo, el movimiento LGBT y el movimiento altermundista. También señala que los nuevos movimientos pueden articular dimensiones culturales y políticas.</p>
-<div class="memory"><span class="mnemonic">NUEVAS = IDENTIDAD + CULTURA + DERECHOS + AMBIENTE + TERRITORIO</span></div>
-</section>
-<section id="revoluciones">
-<h2>4. Las cuatro grandes revoluciones latinoamericanas</h2>
-<div class="timeline">
-<div class="event"><b>1910–1917</b><span><b>México.</b> Revolución iniciada el 20/11/1910. Porfiriato → Madero → Zapata/Villa/Orozco → Plan de Ayala → Constitución de 1917.</span></div>
-<div class="event"><b>1952</b><span><b>Bolivia.</b> Revolución Nacional liderada por el MNR de Víctor Paz Estenssoro. Sufragio universal + nacionalización de minas + reforma agraria.</span></div>
-<div class="event"><b>1959</b><span><b>Cuba.</b> Movimiento 26 de Julio → Fidel Castro → caída de Batista → orientación comunista y alineamiento con la URSS.</span></div>
-<div class="event"><b>1979</b><span><b>Nicaragua.</b> FSLN → caída de Somoza → gobierno sandinista → conflicto posterior con la Contra.</span></div>
-</div>
-
-<h3>🇲🇽 México</h3>
-<p><b>Porfiriato:</b> Porfirio Díaz, 1876–1911. Concentración de poder, riqueza y tierra; falta de libertad política; despojo de tierras; analfabetismo; represión de huelgas.</p>
-<p><b>20 de noviembre de 1910:</b> inicio de la revolución.</p>
-<p><b>Actores:</b> Pascual Orozco — Chihuahua; Pancho Villa — campesinos del norte; Emiliano Zapata — campesinos y líderes populares del sur.</p>
-<p><b>25 de mayo de 1911:</b> renuncia de Díaz.</p>
-<p><b>Plan de Ayala:</b> 28/11/1911; impulsado por Zapata; desconocimiento de Madero y reivindicación de tierras campesinas. Frase del material: <span class="key">“La tierra es de quien la trabaja”.</span></p>
-<p><b>Consecuencias:</b> Constitución de 1917, reforma agraria, educación pública, nacionalización del petróleo, mejoras laborales/sindicalismo y reparto de latifundios.</p>
-
-<h3>🇧🇴 Bolivia</h3>
-<p><b>9 de abril de 1952:</b> insurrección popular que llevó al MNR al poder. Contexto: crisis de 1929, Guerra del Chaco, desigualdad y movilización minera/obrera.</p>
-<p><b>Víctor Paz Estenssoro:</b> figura central. Reformas: <span class="key">sufragio universal + nacionalización de minas + reforma agraria + políticas sociales</span>.</p>
-<p><b>Legado:</b> ampliación del electorado, reforma del ejército, milicias, nacionalización minera, reforma agraria y educativa. El MNR fue derrocado en 1964.</p>
-
-<h3>🇨🇺 Cuba</h3>
-<p><b>Batista:</b> llegó por golpe de Estado en 1952; dictadura hasta 1959, represión, censura, desigualdad y vínculos estrechos con EE.UU.</p>
-<p><b>Movimiento 26 de Julio:</b> dirigido por Fidel Castro. Nombre ligado al asalto al Cuartel Moncada del 26/07/1953.</p>
-<p><b>1956:</b> expedición del <span class="key">Granma</span>; Sierra Maestra; Radio Rebelde; apoyo popular.</p>
-<p><b>1 de enero de 1959:</b> Batista huye y triunfa la revolución.</p>
-<p><b>Che Guevara:</b> argentino, médico, líder guerrillero; participa en la revolución y luego ocupa cargos en el gobierno cubano. En 1965 abandona Cuba; muere en Bolivia en 1967.</p>
-<p><b>1960:</b> alineamiento con la URSS y ruptura con EE.UU., seguida de embargo económico según el material.</p>
-
-<h3>🇳🇮 Nicaragua</h3>
-<p><b>Dinastía Somoza:</b> control desde 1937 hasta 1979; autoritarismo, corrupción, nepotismo, concentración económica y represión mediante la Guardia Nacional.</p>
-<p><b>FSLN:</b> fundado en 1961, inspirado en Augusto César Sandino; articuló obreros, campesinos e intelectuales.</p>
-<p><b>1978:</b> asesinato de Pedro Joaquín Chamorro → aumento de protestas.</p>
-<p><b>19 de julio de 1979:</b> triunfo sandinista en Managua y caída de Somoza.</p>
-<p><b>Contra:</b> conflicto armado de los años 80 contra el gobierno sandinista, con apoyo financiero y militar de EE.UU.</p>
-</section>
-
-
-<section id="cordoba">
-<h2>7. Reforma Universitaria de Córdoba (1918)</h2>
-<div class="memory"><b>⚠️ Esta parte no aparece desarrollada en el PDF adjunto:</b> se incorpora como complemento de estudio general para cubrir el programa que indicás.</div>
-<p>La <span class="key">Reforma Universitaria de Córdoba</span> comenzó en Argentina en 1918, a partir de la movilización de estudiantes de la Universidad Nacional de Córdoba. Se convirtió en un acontecimiento fundamental de la historia universitaria latinoamericana porque cuestionó la estructura tradicional de la universidad y defendió una universidad más abierta, moderna y vinculada con la sociedad.</p>
-<h3>📍 Contexto</h3>
-<p>La universidad mantenía estructuras consideradas por los estudiantes como autoritarias, jerárquicas y poco democráticas. Los estudiantes reclamaron cambios en la enseñanza, en el gobierno universitario y en la relación entre universidad y sociedad.</p>
-<h3>🎯 Principales principios</h3>
-<div class="grid">
-<div class="card"><b>Autonomía universitaria</b><br>Capacidad de la universidad para gobernarse y organizar sus asuntos sin subordinación indebida al poder político.</div>
-<div class="card"><b>Cogobierno</b><br>Participación de distintos estamentos universitarios en el gobierno de la institución, especialmente la representación estudiantil.</div>
-<div class="card"><b>Libertad de cátedra</b><br>Defensa de la libertad académica y de enseñanza.</div>
-<div class="card"><b>Modernización</b><br>Crítica a métodos tradicionales y búsqueda de una universidad renovada.</div>
-<div class="card"><b>Concursos docentes</b><br>Impulso a mecanismos de selección y renovación del cuerpo docente.</div>
-<div class="card"><b>Extensión universitaria</b><br>Mayor vínculo entre universidad y sociedad.</div>
-<div class="card"><b>Democratización</b><br>Cuestionamiento de estructuras cerradas y autoritarias.</div>
-</div>
-<h3>🌎 ¿Por qué fue importante para América Latina?</h3>
-<p>El movimiento cordobés tuvo una fuerte influencia regional. Sus ideas fueron retomadas por organizaciones estudiantiles de otros países y contribuyeron a pensar la universidad como una institución vinculada con la sociedad y no exclusivamente con las élites.</p>
-<h3>🧠 Para el examen</h3>
-<p>Si te preguntan “¿qué fue la Reforma de Córdoba?”, una respuesta corta y segura es:</p>
-<div class="memory"><span class="mnemonic">CÓRDOBA 1918 = ESTUDIANTES + AUTONOMÍA + COGOBIERNO + LIBERTAD DE CÁTEDRA + UNIVERSIDAD/SOCIEDAD</span></div>
-</section>
-<section id="comparacion">
-<h2>📊 Cuadro comparativo para memorizar</h2>
-<table>
-<tr><th></th><th>🇲🇽 México</th><th>🇧🇴 Bolivia</th><th>🇨🇺 Cuba</th><th>🇳🇮 Nicaragua</th></tr>
-<tr><td><b>Año clave</b></td><td>1910 / 1911</td><td>1952</td><td>1959</td><td>1979</td></tr>
-<tr><td><b>Régimen</b></td><td>Porfiriato</td><td>Junta Militar</td><td>Batista</td><td>Somoza</td></tr>
-<tr><td><b>Fuerza</b></td><td>Villa, Zapata, Orozco</td><td>MNR</td><td>M-26-7</td><td>FSLN</td></tr>
-<tr><td><b>Figura principal</b></td><td>Madero / Zapata / Villa</td><td>Paz Estenssoro</td><td>Fidel Castro</td><td>Daniel Ortega</td></tr>
-<tr><td><b>Hito</b></td><td>Plan de Ayala / Constitución 1917</td><td>Nacionalización + sufragio</td><td>Moncada / Granma</td><td>Asesinato Chamorro</td></tr>
-<tr><td><b>Tierra</b></td><td>Reforma agraria</td><td>Reforma agraria</td><td>Nacionalización de industria y tierra</td><td>Reformas sociales</td></tr>
-<tr><td><b>Orientación final</b></td><td>Nacionalista</td><td>Nacionalista</td><td>Marxista-leninista / URSS</td><td>Socialista</td></tr>
-<tr><td><b>Conflicto posterior</b></td><td>—</td><td>Golpe de Estado 1964</td><td>Embargo de EE.UU.</td><td>Guerra contra la Contra</td></tr>
-</table>
-
-<div class="memory"><span class="mnemonic">MÉXICO = TIERRA · BOLIVIA = MINAS · CUBA = BATISTA/CASTRO · NICARAGUA = SOMOZA/SANDINISMO</span></div>
-
-<h3>🔥 Patrón común de las cuatro</h3>
-<ol>
-<li>Régimen autoritario/dictatorial.</li>
-<li>Concentración de tierra, riqueza y poder.</li>
-<li>Desigualdad social y pobreza.</li>
-<li>Movilización de sectores populares.</li>
-<li>Reforma agraria como demanda central.</li>
-<li>Transformación política/social.</li>
-</ol>
-<p><b>Clave de examen:</b> distinguir <span class="key">causas estructurales</span> (desigualdad, pobreza rural, falta de democracia) de <span class="key">desencadenantes inmediatos</span> (hecho que precipita la movilización).</p>
-</section>
-
-<section>
-<h2>🃏 Tarjetas de memoria</h2>
-<div id="flash" class="flash">Hacé clic en “Siguiente” para comenzar</div>
-<p style="text-align:center"><button onclick="nextCard()">Siguiente tarjeta</button> <button class="secondary" onclick="shuffleCards()">Mezclar</button></p>
-</section>
-
-
-<section>
-<h2>🧠 Conexiones que te pueden salvar en el examen</h2>
-<div class="card">
-<b>1. Cuestión Social → Movimientos sociales</b><br>
-La industrialización generó desigualdades y conflictos. Esos problemas favorecieron la organización colectiva y las reivindicaciones de trabajadores y otros sectores.
-</div>
-<div class="card">
-<b>2. Movimientos sociales → Nuevas reivindicaciones</b><br>
-Las demandas se diversifican: además de trabajo y condiciones económicas aparecen identidad, género, ambiente, derechos civiles, territorio y cultura.
-</div>
-<div class="card">
-<b>3. Estado de Bienestar → respuesta estatal</b><br>
-Frente a desigualdades y conflictos sociales, el Estado puede intervenir mediante políticas de redistribución y servicios sociales.
-</div>
-<div class="card">
-<b>4. Revoluciones latinoamericanas → transformación del poder</b><br>
-México, Bolivia, Cuba y Nicaragua muestran procesos en los que sectores movilizados enfrentan regímenes autoritarios y buscan transformaciones políticas, económicas y sociales.
-</div>
-<div class="card">
-<b>5. Córdoba → movimiento estudiantil</b><br>
-La Reforma Universitaria muestra otra dimensión de la movilización colectiva: estudiantes que cuestionan estructuras institucionales y reclaman democratización, autonomía y participación.
-</div>
-<div class="memory"><span class="mnemonic">HILO GENERAL: PROBLEMA → ORGANIZACIÓN → REIVINDICACIÓN → MOVILIZACIÓN → RESPUESTA/TRANSFORMACIÓN</span></div>
-</section>
-<section id="quiz">
-<h2>📝 Autoevaluación</h2>
-<p>Intentá responder mentalmente antes de revelar cada respuesta.</p>
-<div class="quiz-q"><b>1. ¿Qué diferencia a un movimiento social de una protesta espontánea?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Su organización, coordinación, planificación, identidad, solidaridad y continuidad en el tiempo.</div></div>
-<div class="quiz-q"><b>2. ¿Cuál es el objetivo general de los movimientos sociales?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Lograr cambio social frente a desigualdades e injusticias y mejorar condiciones de vida y laborales.</div></div>
-<div class="quiz-q"><b>3. ¿Qué fue la Cuestión Social?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">El conjunto de problemas sociales, laborales e ideológicos derivados de la industrialización y urbanización, especialmente desde el siglo XIX.</div></div>
-<div class="quiz-q"><b>4. ¿Qué tres reformas recordás de Bolivia 1952?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Sufragio universal, nacionalización de las minas y reforma agraria; también hubo políticas sociales y reforma militar.</div></div>
-<div class="quiz-q"><b>5. ¿Qué fue el Plan de Ayala?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Proclama de Zapata de 1911 contra Madero, centrada en la restitución de tierras a comunidades campesinas.</div></div>
-<div class="quiz-q"><b>6. ¿Qué relación hay entre Moncada, M-26-7 y Granma?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Moncada (1953) da nombre/sentido al M-26-7; luego, en 1956, el movimiento regresó a Cuba en el yate Granma para continuar la lucha.</div></div>
-<div class="quiz-q"><b>7. ¿Qué fue el FSLN?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Frente Sandinista de Liberación Nacional, fundado en 1961 e inspirado en Sandino; lideró la revolución que derrocó a Somoza en 1979.</div></div>
-<div class="quiz-q"><b>8. ¿Cuál es el patrón común de las cuatro revoluciones?</b><button onclick="toggle(this)">Ver respuesta</button><div class="answer">Autoritarismo + concentración de poder/riqueza/tierra + desigualdad + movilización popular + reforma agraria + transformación política/social.</div></div>
-</section>
-
-<section>
-<h2>⏱️ Método de estudio recomendado</h2>
-<div class="grid">
-<div class="card"><b>1 — Lectura activa</b><br>Leé una sección y cerrá el texto.</div>
-<div class="card"><b>2 — Recuperación</b><br>Explicá con tus palabras qué recordás.</div>
-<div class="card"><b>3 — Asociación</b><br>Usá las frases de memoria y fechas.</div>
-<div class="card"><b>4 — Comparación</b><br>Contrastá México, Bolivia, Cuba y Nicaragua.</div>
-<div class="card"><b>5 — Examen</b><br>Respondé las preguntas sin mirar.</div>
-<div class="card"><b>6 — Repetición</b><br>Volvé a las tarjetas al día siguiente.</div>
-</div>
-</section>
-</main>
-<footer>Guía basada en el material de estudio proporcionado. La Reforma de Córdoba y la sección de nuevas reivindicaciones incluyen además contexto complementario para cubrir el programa solicitado.</footer>
+<a href="#mapa" class="top-link" id="topLink" aria-label="Volver arriba">↑</a>
 
 <script>
+/* -------- quiz -------- */
+let revealed = new Set();
+function toggle(btn){
+  const wrap = btn.closest('.quiz-q');
+  const a = btn.nextElementSibling;
+  const now = a.style.display === "block";
+  a.style.display = now ? "none" : "block";
+  const idx = Array.from(document.querySelectorAll('.quiz-q')).indexOf(wrap);
+  if(!now) revealed.add(idx); else revealed.delete(idx);
+  document.getElementById('quizProgress').textContent = revealed.size + " / 8 respuestas reveladas";
+}
+
+/* -------- flashcards -------- */
 let cards=[
 ["¿Qué son los movimientos sociales?","Participación ciudadana organizada y acción colectiva sostenida para lograr cambio social."],
 ["¿Qué los hace diferentes de una protesta espontánea?","Organización, coordinación, planificación, identidad, solidaridad y permanencia."],
@@ -361,13 +522,44 @@ let cards=[
 ["¿Qué conecta Cuestión Social y movimientos sociales?","Los problemas y desigualdades sociales pueden generar organización colectiva y reivindicaciones."],
 ["Estado de Bienestar: mecanismo de redistribución","Impuestos y tasas."],
 ["FUCVAM: ¿por qué es un buen ejemplo?","Porque una demanda puntual de vivienda se articuló con objetivos políticos más amplios y con otros actores sociales."]
-
 ];
-let i=-1;
-function render(){document.getElementById("flash").textContent=cards[i][0]+" — "+cards[i][1]}
-function nextCard(){i=(i+1)%cards.length;render()}
-function shuffleCards(){cards.sort(()=>Math.random()-.5);i=0;render()}
-function toggle(btn){let a=btn.nextElementSibling;a.style.display=a.style.display==="block"?"none":"block"}
+let i = -1;
+function render(){
+  document.getElementById("flashQ").textContent = cards[i][0];
+  document.getElementById("flashA").textContent = cards[i][1];
+  document.getElementById("flashCount").textContent = "Tarjeta " + (i+1) + " / " + cards.length;
+}
+function nextCard(){ i = (i+1) % cards.length; render(); }
+function prevCard(){ i = (i-1+cards.length) % cards.length; render(); }
+function shuffleCards(){ cards.sort(()=>Math.random()-.5); i=0; render(); }
+
+/* -------- mobile menu -------- */
+const sidebar = document.getElementById('sidebar');
+document.getElementById('menuBtn').addEventListener('click', ()=>{
+  sidebar.classList.toggle('open');
+});
+document.querySelectorAll('#sidenav a').forEach(a=>{
+  a.addEventListener('click', ()=>{ if(window.innerWidth<=900) sidebar.classList.remove('open'); });
+});
+
+/* -------- active section highlight -------- */
+const links = Array.from(document.querySelectorAll('#sidenav a'));
+const targets = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id = '#' + e.target.id;
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+    }
+  });
+}, { rootMargin: "-15% 0px -70% 0px" });
+targets.forEach(t => io.observe(t));
+
+/* -------- back to top -------- */
+const topLink = document.getElementById('topLink');
+window.addEventListener('scroll', ()=>{
+  topLink.classList.toggle('show', window.scrollY > 600);
+});
 </script>
 </body>
 </html>
